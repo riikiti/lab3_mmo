@@ -45,7 +45,7 @@ plt.title("Регрессия")
 plt.grid(True)
 
 
-# РѕС€РёР±РєРё РѕС‚СЂРёСЃРѕРІС‹РІР°РµРј
+# ошибки отрисовываем
 plt.subplot(1, 2, 2)
 plt.plot(history.history['loss'])
 plt.grid(True)

@@ -17,7 +17,7 @@ def classifier(X):
         return 1
     return 0
 def sort_points(Points, Point_classes):
-    # РљР»Р°СЃСЃРёС„РёС†РёСЂСѓРµРј РґР°РЅРЅС‹Рµ РІСЂСѓС‡РЅСѓСЋ
+    # Классифицируем данные вручную
     ai = np.where(Point_classes > .5)
     bi = np.where(Point_classes <= .5)
 
@@ -68,7 +68,7 @@ plt.ylim([0.0, 1.0])
 plt.title("Тестовая выборка")
 
 plt.subplot(1, 3, 3)
-# РѕС€РёР±РєРё РѕС‚СЂРёСЃРѕРІС‹РІР°РµРј
+# ошибки отрисовываем
 plt.plot(history.history['loss'])
 plt.title("Изменение ошибки")
 plt.xlim(0, epoch)
