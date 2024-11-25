@@ -59,9 +59,8 @@ plt.title("Обучающая выборка")
 
 plt.subplot(1, 3, 2)
 (Ax, Ay, Bx, By) = sort_points(XY_test, nw_res.T[0])
-plt.subplot(1, 3, 2)
-plt.scatter(Ax, Ay, label='A')
-plt.scatter(Bx, By, label='B')
+plt.scatter(Ax, Ay, label='A', color='blue')  # Точки под графиком - синие
+plt.scatter(Bx, By, label='B', color='orange')  # Точки над графиком - оранжевые
 plt.plot(X_sepline, Y_sepline)  # draw separation line
 plt.xlim([0.0, 1.0])
 plt.ylim([0.0, 1.0])
