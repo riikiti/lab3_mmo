@@ -43,7 +43,7 @@ model.compile(loss='mean_squared_error', optimizer=keras.optimizers.Adam(0.3))
 
 history = model.fit(XY_train, C_train, epochs=1000, verbose=False)
 epoch = history.epoch[-1]
-print(f"РћС€РёР±РєР° РЅР° РІС‹Р±РѕСЂРєРµ {history.history['loss'][epoch]:.13}.")
+print(f"Ошибка на выборке. {history.history['loss'][epoch]:.13}.")
 
 nw_res = model.predict(XY_test)
 
@@ -54,7 +54,7 @@ plt.scatter(Bx, By, label='B')
 plt.plot(X_sepline, Y_sepline)  # draw separation line
 plt.xlim([0.0, 1.0])
 plt.ylim([0.0, 1.0])
-plt.title("РћР±СѓР°СЋС‰Р°СЏ РІС‹Р±РѕСЂРєР°")
+plt.title("Обучающая выборка")
 
 
 plt.subplot(1, 3, 2)
@@ -65,11 +65,11 @@ plt.scatter(Bx, By, label='B')
 plt.plot(X_sepline, Y_sepline)  # draw separation line
 plt.xlim([0.0, 1.0])
 plt.ylim([0.0, 1.0])
-plt.title("РўРµСЃС‚РѕРІР°СЏ РІС‹Р±РѕСЂРєР°")
+plt.title("Тестовая выборка")
 
 plt.subplot(1, 3, 3)
 # РѕС€РёР±РєРё РѕС‚СЂРёСЃРѕРІС‹РІР°РµРј
 plt.plot(history.history['loss'])
-plt.title("РР·РјРµРЅРµРЅРёРµ РѕС€РёР±РєРё")
+plt.title("Изменение ошибки")
 plt.xlim(0, epoch)
 plt.show()

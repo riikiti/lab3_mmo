@@ -30,7 +30,7 @@ model.compile(loss='mean_squared_error', optimizer=keras.optimizers.Adam(0.3))
 
 history = model.fit(X_train.T[0], Y_train, epochs=1000, verbose=False)
 epoch = history.epoch[-1]
-print(f"РћС€РёР±РєР° РЅР° РІС‹Р±РѕСЂРєРµ: {history.history['loss'][epoch]:.13}.")
+print(f"Ошибка на выборке: {history.history['loss'][epoch]:.13}.")
 
 
 nw_res = model.predict(X_test.T[0])
@@ -41,7 +41,7 @@ plt.plot(X_test.T[0], Y_test, label="B") 	# draw separation line
 plt.plot(X_test.T[0], nw_res.T[0], label="C")
 plt.xlim([-0.2, 1.2])
 plt.ylim([-0.2, 1.2])
-plt.title("Р РµРіСЂРµСЃСЃРёСЏ")
+plt.title("Регрессия")
 plt.grid(True)
 
 
@@ -50,6 +50,6 @@ plt.subplot(1, 2, 2)
 plt.plot(history.history['loss'])
 plt.grid(True)
 plt.axis('tight')
-plt.title("РР·РјРµРЅРµРЅРёРµ РѕС€РёР±РєРё РІ РїСЂРѕС†РµСЃСЃРµ РѕР±СѓС‡РµРЅРёСЏ")
+plt.title("Изменение ошибки в процессе обучения")
 plt.xlim(0, epoch)
 plt.show()
